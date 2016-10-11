@@ -1,0 +1,156 @@
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="white-box">
+      <h3 class="box-title">{{ project.name }}</h3>
+        <ul class="list-inline text-right">
+          <li>
+            <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Evolution</h5>
+          </li>
+          <li>
+            <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal</h5>
+          </li>
+          <li>
+            <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>Client Increment</h5>
+          </li>
+          <li>
+            <h5><i class="fa fa-circle m-r-5" style="color: rgba(37,166,247, 1);"></i>Team Increment</h5>
+          </li>
+        </ul>
+      <div>
+        <canvas id="chart1" height="140" width="440" style="width: 440px; height: 140px;"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-xs-12 col-sm-6">
+    <div class="white-box">
+      <h3 class="box-title">Iterations</h3>
+        <ul class="list-task list-group" data-role="tasklist">
+          {% for milestone in milestones %}
+            <li class="list-group-item" data-role="task">
+              <a href="{% url 'panel:show_milestone' id=milestone.id %}">{{ milestone.name }}</a>
+                  {% if milestone.closed %}
+                    <span class="label label-danger">closed</span>
+                  {% endif %}
+              </li>
+
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+      <div id="iteration_chart" class="col-md-7 col-lg-9 col-sm-12 col-xs-12">
+
+      </div>
+    </div>
+
+
+<script>
+$( document ).ready(function() {
+
+  var ctx1 = document.getElementById("chart1").getContext("2d");
+  var data1 = {
+
+        labels: [
+          {% for sprint in sprints %}
+            "{{ sprint.name }}"{% if not foorloop.last %},{% endif %}
+          {% endfor %}
+        ],
+      datasets: [
+          {
+              label: "Optimal",
+              fillColor: "rgba(251,150,120,0.3)",
+              strokeColor: "rgba(251,150,120, 0.9)",
+              pointColor: "rgba(251,150,120, 0.9)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(251,150,120, 0.9)",
+              borderWidth: 20,
+              data: [
+                {% for sprint in sprints %}
+                  {{ sprint.optimal }}{% if not foorloop.last %},{% endif %}
+                {% endfor %}
+              ],
+              lineWidth: 5
+          },
+          {
+              label: "Actual",
+              fillColor: "rgba(0,191,199, 0.3)",
+              strokeColor: "rgba(0,191,199, 0.8)",
+              pointColor: "rgba(0,191,199, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(0,191,199, 1)",
+              data: [
+                {% for sprint in sprints %}
+                  {{ sprint.evolution }}{% if not foorloop.last %},{% endif %}
+                {% endfor %}
+              ]
+          },
+          {
+              label: "Client Increment",
+              fillColor: "rgba(150,117,206, 0.3)",
+              strokeColor: "rgba(150,117,206, 0.8)",
+              pointColor: "rgba(150,117,206, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(150,117,206, 1)",
+              data: [
+                {% for sprint in sprints %}
+                  {{ sprint.client_increment }}{% if not foorloop.last %},{% endif %}
+                {% endfor %}
+              ]
+          },
+          {
+              label: "Team Increment",
+              fillColor: "rgba(37,166,247, 0.3)",
+              strokeColor: "rgba(37,166,247, 0.8)",
+              pointColor: "rgba(37,166,247, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(37,166,247, 1)",
+              data: [
+                {% for sprint in sprints %}
+                  {{ sprint.team_increment }}{% if not foorloop.last %},{% endif %}
+                {% endfor %}
+              ]
+          }
+
+
+      ]
+  };
+
+  var chart1 = new Chart(ctx1).Line(data1, {
+      scaleShowGridLines : true,
+      scaleGridLineColor : "rgba(0,0,0,.005)",
+      scaleGridLineWidth : 0,
+      scaleShowHorizontalLines: true,
+      scaleShowVerticalLines: true,
+      bezierCurve : false,
+      bezierCurveTension : 0.4,
+      pointDot : true,
+      pointDotRadius : 4,
+      pointDotStrokeWidth : 1,
+      pointHitDetectionRadius : 2,
+      datasetStroke : true,
+      tooltipCornerRadius: 2,
+      datasetStrokeWidth : 2,
+      datasetFill : true,
+      responsive: true
+  });
+
+
+});
+
+</script>
+
+<script>
+$(document).ready(function() {
+$('a').click(function(){
+  var page = $(this).attr('href');
+  $("#iteration_chart").load(page);
+  return false;
+});
+});
+</script>

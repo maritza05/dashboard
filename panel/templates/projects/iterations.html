@@ -1,0 +1,74 @@
+<div class="white-box">
+  <h3 class="box-title">{{ milestone.name }}</h3>
+  <ul class="list-inline text-right">
+    <li>
+      <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>iPhone</h5>
+    </li>
+    <li>
+      <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>iPad</h5>
+    </li>
+    <li>
+      <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>iPod</h5>
+    </li>
+  </ul>
+  <div id="morris-area-chart" style="height: 340px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+  </div>
+</div>
+
+<script>
+Morris.Area({
+        element: 'morris-area-chart',
+        data: [{
+            period: '2010',
+            iphone: 50,
+            ipad: 80,
+            itouch: 20
+        }, {
+            period: '2011',
+            iphone: 130,
+            ipad: 100,
+            itouch: 80
+        }, {
+            period: '2012',
+            iphone: 80,
+            ipad: 60,
+            itouch: 70
+        }, {
+            period: '2013',
+            iphone: 70,
+            ipad: 200,
+            itouch: 140
+        }, {
+            period: '2014',
+            iphone: 180,
+            ipad: 150,
+            itouch: 140
+        }, {
+            period: '2015',
+            iphone: 105,
+            ipad: 100,
+            itouch: 80
+        },
+         {
+            period: '2016',
+            iphone: 250,
+            ipad: 150,
+            itouch: 200
+        }],
+        xkey: 'period',
+        ykeys: ['iphone', 'ipad', 'itouch'],
+        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        pointSize: 3,
+        fillOpacity: 0,
+        pointStrokeColors:['#00bfc7', '#fb9678', '#9675ce'],
+        behaveLikeLine: true,
+        gridLineColor: '#e0e0e0',
+        lineWidth: 3,
+        hideHover: 'auto',
+        lineColors: ['#00bfc7', '#fb9678', '#9675ce'],
+        resize: true
+
+    });
+
+
+    </script>
