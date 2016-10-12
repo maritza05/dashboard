@@ -40,9 +40,11 @@
         </ul>
         </div>
       </div>
-      <div id="iteration_chart" class="col-md-7 col-lg-9 col-sm-12 col-xs-12">
+    </div>
+    <div class="row" id="iteration_chart">
 
-      </div>
+
+
     </div>
 
 
@@ -60,12 +62,12 @@ $( document ).ready(function() {
       datasets: [
           {
               label: "Optimal",
-              fillColor: "rgba(251,150,120,0.3)",
-              strokeColor: "rgba(251,150,120, 0.9)",
-              pointColor: "rgba(251,150,120, 0.9)",
-              pointStrokeColor: "#fff",
-              pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(251,150,120, 0.9)",
+              fillColor: "rgba(225, 229, 233, 0.3)",
+              strokeColor: "rgba(225, 229, 233, 0.9)",
+              pointColor: "rgba(225, 229, 233, 0.9)",
+              pointStrokeColor: "#F3F5F6",
+              pointHighlightFill: "#fF3F5F6",
+              pointHighlightStroke: "rgba(225, 229, 233, 0.9",
               borderWidth: 20,
               data: [
                 {% for sprint in sprints %}
@@ -76,12 +78,12 @@ $( document ).ready(function() {
           },
           {
               label: "Actual",
-              fillColor: "rgba(0,191,199, 0.3)",
-              strokeColor: "rgba(0,191,199, 0.8)",
-              pointColor: "rgba(0,191,199, 1)",
-              pointStrokeColor: "#fff",
-              pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(0,191,199, 1)",
+              fillColor: "rgba(13, 219, 228, 0.2)",
+              strokeColor: "rgba(13, 219, 228, 0.3)",
+              pointColor: "rgba(13, 219, 228, 0.3)",
+              pointStrokeColor: "#98EBEF",
+              pointHighlightFill: "#98EBEF",
+              pointHighlightStroke: "rgba(13, 219, 228, 0.3)",
               data: [
                 {% for sprint in sprints %}
                   {{ sprint.evolution }}{% if not foorloop.last %},{% endif %}
@@ -90,7 +92,7 @@ $( document ).ready(function() {
           },
           {
               label: "Client Increment",
-              fillColor: "rgba(150,117,206, 0.3)",
+              fillColor: "rgba(150,117,206, 0)",
               strokeColor: "rgba(150,117,206, 0.8)",
               pointColor: "rgba(150,117,206, 1)",
               pointStrokeColor: "#fff",
@@ -104,7 +106,7 @@ $( document ).ready(function() {
           },
           {
               label: "Team Increment",
-              fillColor: "rgba(37,166,247, 0.3)",
+              fillColor: "rgba(37,166,247, 0)",
               strokeColor: "rgba(37,166,247, 0.8)",
               pointColor: "rgba(37,166,247, 1)",
               pointStrokeColor: "#fff",

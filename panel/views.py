@@ -29,11 +29,15 @@ def show_charts(request, id):
     project = ProjectsProject.objects.get(id=id)
     data = api_handler.get_project_stats(id)
     sprints = data['milestones']
-    for sprint in sprints:
+    previous = next_ = None
+    l = len(sprints)
+    for index, sprint in enumerate(sprints):
+        if index > 0:
+            previous = sprints[index - 1]
         sprint['client_increment'] = sprint.pop('client-increment')
         sprint['team_increment'] = sprint.pop('team-increment')
         if sprint['evolution'] == None:
-            sprint['evolution'] = 0
+            sprint['evolution'] = previous['evolution']
     milestones = MilestonesMilestone.objects.all().filter(project=project)
 
     return render(request, 'projects/charts-area.html', {'project': project,
@@ -44,5 +48,10 @@ def get_milestones_stats(request, id):
     print("ID: " + str(id))
     milestone = MilestonesMilestone.objects.get(id=id)
     data = api_handler.get_milestones_stats(id)
-    print(data)
-    return render(request, 'projects/iterations.html', {'milestone': milestone})
+    days = data['days']
+    completed_userstories = data['completed_userstories']
+    total_userstories = data['total_userstories']
+    userstories_percent = (completed_userstories * 100) / total_userstories
+    return render(request, 'projects/iterations.html', {'milestone': milestone,
+                                                        'days': days,
+                                                        'userstories_percent': userstories_percent})
