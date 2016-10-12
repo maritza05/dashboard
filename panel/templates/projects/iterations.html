@@ -1,0 +1,81 @@
+<div class="white-box">
+  <h3 class="box-title">{{ milestone.name }}</h3>
+  <ul class="list-inline text-right">
+    <li>
+      <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Open Points</h5>
+    </li>
+    <li>
+      <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal Points</h5>
+    </li>
+  </ul>
+  <div>
+    <canvas id="chart-it" width="569" height="232" style="width: 569px; height: 232px;"></canvas>
+  </div>
+
+  </div>
+</div>
+
+<script>
+$( document ).ready(function() {
+
+    var ctx1 = document.getElementById("chart-it").getContext("2d");
+    var data1 = {
+        labels: [
+          {% for day in days %}
+          "{{ day.day }}"{% if not foorloop.last %},{% endif %}
+          {% endfor %}
+        ],
+        datasets: [
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(251,150,120, 0)",
+                strokeColor: "rgba(251,150,120, 0.9)",
+                pointColor: "rgba(251,150,120, 0.9)",
+                pointStrokeColor: "#FB9678",
+                pointHighlightFill: "#FB9678",
+                pointHighlightStroke: "rgba(251,150,120, 0.9)",
+                data: [
+                  {% for day in days %}
+                    {{ day.optimal_points }}{% if not foorloop.last %},{% endif %}
+                  {% endfor %}
+                ]
+            },
+            {
+                label: "My First dataset",
+                fillColor: "rgba(0,191,199, 0)",
+                strokeColor: "rgba(0,191,199, 0.8)",
+                pointColor: "rgba(0,191,199, 1)",
+                pointStrokeColor: "#00BFC7",
+                pointHighlightFill: "#00BFC7",
+                pointHighlightStroke: "rgba(0,191,199, 1)",
+                data: [
+                  {% for day in days %}
+                      {{ day.open_points }}{% if not foorloop.last %},{% endif %}
+                  {% endfor %}
+                ]
+            }
+
+        ]
+    };
+
+    var chart1 = new Chart(ctx1).Line(data1, {
+        scaleShowGridLines : true,
+        scaleGridLineColor : "rgba(0,0,0,.005)",
+        scaleGridLineWidth : 0,
+        scaleShowHorizontalLines: true,
+        scaleShowVerticalLines: true,
+        bezierCurve : true,
+        bezierCurveTension : 0.4,
+        pointDot : true,
+        pointDotRadius : 4,
+        pointDotStrokeWidth : 1,
+        pointHitDetectionRadius : 2,
+        datasetStroke : true,
+		  tooltipCornerRadius: 2,
+        datasetStrokeWidth : 3,
+        datasetFill : true,
+      responsive: true
+    });
+});
+
+    </script>
