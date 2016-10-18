@@ -40,14 +40,50 @@ def show_charts(request, id):
             sprint['evolution'] = previous['evolution']
 
     milestones = MilestonesMilestone.objects.all().filter(project=project)
+    milestones = milestones.order_by('id')
     max_point = max([sprint['optimal'] for sprint in sprints ])
     max_point = (int(max_point/100)) + 1
     print("This is the max_point: " + str(max_point))
+    milestone_data = [api_handler.get_milestones(milestone.id) for milestone in milestones]
+    milestones_data = []
+    for milestone in milestone_data:
+        data = dict()
+        data['name']= milestone['name']
+        if milestone['closed_points'] == None:
+            data['closed_points'] = 0
+        elif milestone['total_points'] == None:
+            data['total_points'] = 0
+        else:
+            data['closed_points'] = milestone['closed_points']
+            data['total_points'] = milestone['total_points']
+        milestones_data.append(data)
+    velocities = []
+    for i in range(0, len(sprints)):
+        if i == 0:
+            last = sprints[i]
+            actual = sprints[i]
+        else:
+            last = sprints[i-1]
+            actual = sprints[i]
+        print("--> Points" + str(actual['name']) + " last: " + str(last['evolution']) + " actual: " + str(actual['evolution']) + " = " + str(last['evolution'] - actual['evolution']))
+        velocities.append({'name': actual['name'], 'velocity': last['evolution'] - actual['evolution'] })
+    velocity_team = sum([v['velocity'] for v in velocities])/len(velocities)
+    data2 = api_handler.get_project_stats(id)
+    print("Closed points: " + str(data2['closed_points']))
+    print("Total points: " + str(data2['total_points']) )
+    try:
+     avg_points = (data2['closed_points'] * 100) / data2['total_points']
+    except:
+     avg_points = 0
+
 
     return render(request, 'projects/charts-area.html', {'project': project,
                                                         'sprints': sprints,
                                                         'milestones': milestones,
-                                                        'max_point': max_point})
+                                                        'max_point': max_point,
+                                                        'velocities': velocities,
+                                                        'velocity_team': velocity_team,
+                                                        'avg_points': avg_points})
 
 def get_milestones_stats(request, id):
     print("ID: " + str(id))
@@ -91,3 +127,49 @@ def show_panel(request, id):
                                                      'users': users,
                                                      'milestones_count': milestones_count,
                                                      'users_count': users_count })
+
+
+def calculate_probability(request, points, id):
+    project = ProjectsProject.objects.get(id=id)
+    data = api_handler.get_project_stats(id)
+    sprints = data['milestones']
+    previous = next_ = None
+    label = "Insufficient Data"
+    l = len(sprints)
+    for index, sprint in enumerate(sprints):
+        if index > 0:
+            previous = sprints[index - 1]
+        sprint['client_increment'] = sprint.pop('client-increment')
+        sprint['team_increment'] = sprint.pop('team-increment')
+        if sprint['evolution'] == None:
+            sprint['evolution'] = previous['evolution']
+    velocities = []
+    for i in range(0, len(sprints)):
+        if i == 0:
+            last = sprints[i]
+            actual = sprints[i]
+        else:
+            last = sprints[i-1]
+            actual = sprints[i]
+        print("--> Points" + str(actual['name']) + " last: " + str(last['evolution']) + " actual: " + str(actual['evolution']) + " = " + str(last['evolution'] - actual['evolution']))
+        velocities.append({'name': actual['name'], 'velocity': last['evolution'] - actual['evolution'] })
+    for velocity in velocities:
+        try:
+            name = velocity['name']
+            milestone = MilestonesMilestone.objects.get(project=project, name__contains=name)
+            print("-- Milestone: " + milestone.name)
+            velocity['id'] = milestone.id
+        except:
+            velocity['id'] = -1
+    print("*** Velocities: " + str(velocities))
+    milestones = MilestonesMilestone.objects.all().filter(project=project, id__in=[v['id'] for v in velocities], closed=True)
+    avg = 0
+    for milestone in milestones:
+        for velocity in velocities:
+            if milestone.id == velocity['id']:
+                avg += milestone['velocity']
+    print("Average: " + str(avg))
+
+
+
+    return render(request, 'projects/probability.html', {'label': label})
