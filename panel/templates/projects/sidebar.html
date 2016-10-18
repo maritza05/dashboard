@@ -1,0 +1,33 @@
+
+  <li> <a href="#" class="waves-effect active" style="color: #54667a;">
+    <i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Milestones
+      <span class="fa arrow"></span> <span class="label label-rouded label-custom pull-right">{{ milestones_count }}</span></span></a>
+    <ul class="nav nav-second-level">
+        {% for milestone in milestones %}
+          <li><a href="{% url 'panel:show_milestone' id=milestone.id %}" class="project" style="color: #54667a;">{{ milestone.name }}</a></li>
+        {% endfor %}
+    </ul>
+  </li>
+  <li>
+    <a href="#" class="waves-effect" style="color: #54667a;">
+      <i data-icon="/" class="linea-icon linea-basic fa-fw"></i>
+      <span class="hide-menu">Developers<span class="fa arrow"></span>
+        <span class="label label-rouded label-info pull-right">{{ users_count }}</span>
+      </span>
+    </a>
+    <ul class="nav nav-second-level">
+      {% for user in users %}
+        <li><a href="#" style="color: #54667a;">{{ user.full_name}}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+
+<script>
+$(document).ready(function() {
+$('a.project').click(function(){
+  var page = $(this).attr('href');
+  $("#iteration_chart").load(page);
+  return false;
+});
+});
+</script>

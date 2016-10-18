@@ -1,24 +1,79 @@
-<div class="white-box">
-  <h3 class="box-title">{{ milestone.name }}</h3>
-  <ul class="list-inline text-right">
-    <li>
-      <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Open Points</h5>
-    </li>
-    <li>
-      <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal Points</h5>
-    </li>
-  </ul>
-  <div>
-    <canvas id="chart-it" width="569" height="232" style="width: 569px; height: 232px;"></canvas>
-  </div>
+<!--
+<div class="row">
+  <div class="col-sm-3">
+          <div class="chart easy-pie-chart-1" data-percent="75">
+            <span class="percent">75</span>
+            <h5>Estimated Finish</h5>
+            <canvas height="100" width="100"></canvas>
+          </div>
 
-  </div>
-</div>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
+        <div class="white-box">
+          <h3 class="box-title">{{ milestone.name }}</h3>
+          <ul class="list-inline text-right">
+            <li>
+              <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Open Points</h5>
+            </li>
+            <li>
+              <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal Points</h5>
+            </li>
+          </ul>
+          <div>
+            <canvas id="chart-it" width="569" height="232" style="width: 569px; height: 232px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="row">
+            <div class="col-md-8 col-lg-9 col-sm-6 col-xs-12">
+              <div class="white-box">
+                <h3 class="box-title">SALES ANALYTICS</h3>
+                <ul class="list-inline text-center">
+                  <li>
+                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Site A View</h5>
+                  </li>
+                  <li>
+                    <h5><i class="fa fa-circle m-r-5" style="color: #fdc006;"></i>Site B View</h5>
+                  </li>
+                </ul>
+                <div>
+                  <canvas id="chart-iteration" width="693" height="370" style="height: 370px; width: 693px;"></canvas>
+
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
+              <div class="white-box">
+                <h3 class="box-title">Completed Userstories</h3>
+                <div class="row">
+                  <div class="chart easy-pie-chart-1" style="width: 140px;height: 140px;margin-left: 10%;margin-top: 0;" data-percent="{{ userstories_percent }}">
+                    <span class="percent" style="line-height: 140px;">{{ userstories_percent }}</span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
+              <div class="white-box">
+                <h3 class="box-title">Completed Points</h3>
+                <div class="row">
+                  <div class="chart easy-pie-chart-2" style="width: 140px;height: 140px;margin-left: 10%;margin-top: 0;" data-percent="{{ progress_points }}">
+                    <span class="percent" style="line-height: 140px;">{{ progress_points }}</span>
+
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
 
 <script>
-$( document ).ready(function() {
 
-    var ctx1 = document.getElementById("chart-it").getContext("2d");
+$( document ).ready(function() {
+    var ctx1 = document.getElementById("chart-iteration").getContext("2d");
     var data1 = {
         labels: [
           {% for day in days %}
@@ -76,6 +131,32 @@ $( document ).ready(function() {
         datasetFill : true,
       responsive: true
     });
+
+    $('.easy-pie-chart-1').easyPieChart({
+    			easing: 'easeOutBounce',
+    			barColor : '#13dafe',
+    			lineWidth: 3,
+    			animate: 1000,
+          size: 140,
+                lineCap: 'square',
+                trackColor: '#e5e5e5',
+    			onStep: function(from, to, percent) {
+    				$(this.el).find('.percent').text(Math.round(percent));
+    			}
+    		});
+
+        $('.easy-pie-chart-2').easyPieChart({
+        			easing: 'easeOutBounce',
+        			barColor : '#13dafe',
+        			lineWidth: 3,
+        			animate: 1000,
+              size: 140,
+                    lineCap: 'square',
+                    trackColor: '#e5e5e5',
+        			onStep: function(from, to, percent) {
+        				$(this.el).find('.percent').text(Math.round(percent));
+        			}
+        		});
 });
 
     </script>
