@@ -1,317 +1,62 @@
+
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-12">
     <div class="white-box">
       <h3 class="box-title">{{ project.name }}</h3>
-        <ul class="list-inline text-right">
-          <li>
-            <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Evolution</h5>
-          </li>
-          <li>
-            <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal</h5>
-          </li>
-          <li>
-            <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>Client Increment</h5>
-          </li>
-          <li>
-            <h5><i class="fa fa-circle m-r-5" style="color: rgba(37,166,247, 1);"></i>Team Increment</h5>
-          </li>
-        </ul>
       <div>
-        <canvas id="chart1p" height="381" width="715" style="width: 715px; height: 381px;"></canvas>
+        <canvas id="chart1" height="220" width="440" style="width: 440px; height: 220px;"></canvas>
       </div>
     </div>
-  </div>
-  <div class="col-md-3">
-        <section class="panel">
-            <div class="panel-body">
-                <div class="top-stats-panel">
-                    <div class="gauge-canvas">
-                        <h4 class="widget-h">Monthly Expense</h4>
-                        <canvas width="160" height="100" id="gauge"></canvas>
-                    </div>
-                    <ul class="gauge-meta clearfix">
-                        <li id="gauge-textfield" class="pull-left gauge-value">1,150</li>
-                        <li class="pull-right gauge-title">Safe</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-md-3">
-          <section class="panel">
-              <div class="panel-body">
-                <h4 class="widget-h">Monthly Expense</h4>
-                  <svg id="fillgauge1" width="97%" height="170px"></svg>
-              </div>
-          </section>
-      </div>
-      <div class="col-sm-12">
-          <div class="white-box">
-            <h3 class="box-title">Line Chart</h3>
-            <div>
-              <canvas id="chart1" height="220" width="440" style="width: 440px; height: 220px;"></canvas>
-            </div>
-          </div>
-        </div>
-      <div class="col-md-12">
-  <div class="white-box" style="
-    display: table;
-    float: left;
-    width: 100%;
-">
-  <h3 class="box-title">Completed Userstories</h3>
-    <div class="server-details" style="
-    float: left;
-    padding: 20px 0 20px 25px;
-    width: 200px;
-">
-						<span style="
-    font-size: 13px;
-    font-weight: 300;
-">You can check if it's possible to complete another sprint</span>
-						<div style="
-      display: inline-flex;
-      margin-top: 10px;
-  ">
-  <div class="input-group bootstrap-touchspin" style="
-      width: 70%;
-  ">
-
-
-
-                <input id="tch3_22" type="text" value="30" name="tch3_22" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline" class="form-control" style="display: block;">
-
-
-
-    </div>
-
-
-                        </div>
-						<p>4 of 9 core used</p>
-						<h5>Status : <span style="
-    font-size: 16px;
-    color: #73e064;
-">GOOD</span>
-
-    	<canvas class="sleet" id="icon1" width="30" height="30" style="
-      /* margin-top: 10px; */
-  "></canvas>
-    </h5>
-
-						<button class="btn btn-outline btn-default" style="
-    margin-top: 25px;
-">Default button</button>
-					</div>
-<div id="area-chart" style="position: relative;display: table-cell;     height: 330px;     padding-top: 11px;     vertical-align: middle;     width: 100%;">
-  <svg height="366" version="1.1" width="755" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;">
-    <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with RaphaÃ«l 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="33.109375" y="332" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">0</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.609375,332H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="33.109375" y="255.25" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">50</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.609375,255.25H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="33.109375" y="178.5" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">100</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.609375,178.5H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="33.109375" y="101.75" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">150</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.609375,101.75H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="33.109375" y="25" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">200</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.609375,25H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="730" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2014</tspan></text><text x="654.0028664055369" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2013</tspan></text><text x="577.7975214861575" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2012</tspan></text><text x="501.8003878916945" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2011</tspan></text><text x="425.8032542972315" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2010</tspan></text><text x="349.80612070276845" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2009</tspan></text><text x="273.60077578338905" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2008</tspan></text><text x="197.60364218892607" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2007</tspan></text><text x="121.60650859446304" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2006</tspan></text><text x="45.609375" y="344.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="4">2005</tspan></text><path fill="#f5f5fe" stroke="none" d="M45.609375,255.25C64.60865839861576,249.49375,102.60722519584728,232.22500000000002,121.60650859446304,232.22500000000002C140.6057919930788,232.22500000000002,178.6043587903103,257.16875,197.60364218892607,255.25C216.60292558754182,253.33125,254.6014923847733,222.6233755129959,273.60077578338905,216.875C292.65211201323393,211.1108755129959,330.7547844729236,212.08206224350204,349.80612070276845,209.2C368.8054041013842,206.32581224350204,406.8039708986157,197.6875,425.8032542972315,193.85C444.80253769584726,190.0125,482.80110449307875,183.296875,501.8003878916945,178.5C520.7996712903102,173.703125,558.7982380875418,159.30725034199727,577.7975214861575,155.47500000000002C596.8488577160024,151.6322503419973,634.951530175692,153.5641244870041,654.0028664055369,147.8C673.0021498041526,142.05162448700412,711.0007166013843,124.775,730,109.42500000000001L730,332L45.609375,332Z" fill-opacity="0.7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.7;"></path><path fill="none" stroke="#b8b8ff" d="M45.609375,255.25C64.60865839861576,249.49375,102.60722519584728,232.22500000000002,121.60650859446304,232.22500000000002C140.6057919930788,232.22500000000002,178.6043587903103,257.16875,197.60364218892607,255.25C216.60292558754182,253.33125,254.6014923847733,222.6233755129959,273.60077578338905,216.875C292.65211201323393,211.1108755129959,330.7547844729236,212.08206224350204,349.80612070276845,209.2C368.8054041013842,206.32581224350204,406.8039708986157,197.6875,425.8032542972315,193.85C444.80253769584726,190.0125,482.80110449307875,183.296875,501.8003878916945,178.5C520.7996712903102,173.703125,558.7982380875418,159.30725034199727,577.7975214861575,155.47500000000002C596.8488577160024,151.6322503419973,634.951530175692,153.5641244870041,654.0028664055369,147.8C673.0021498041526,142.05162448700412,711.0007166013843,124.775,730,109.42500000000001" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="45.609375" cy="255.25" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="121.60650859446304" cy="232.22500000000002" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="197.60364218892607" cy="255.25" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="273.60077578338905" cy="216.875" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="349.80612070276845" cy="209.2" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="425.8032542972315" cy="193.85" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="501.8003878916945" cy="178.5" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="577.7975214861575" cy="155.47500000000002" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="654.0028664055369" cy="147.8" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="730" cy="109.42500000000001" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="730" cy="86.4" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#fef5f5" stroke="none" d="M45.609375,193.85C64.60865839861576,199.60625,102.60722519584728,209.2,121.60650859446304,216.875C140.6057919930788,224.55,178.6043587903103,252.371875,197.60364218892607,255.25C216.60292558754182,258.128125,254.6014923847733,242.77418775649795,273.60077578338905,239.9C292.65211201323393,237.01793775649796,330.7547844729236,234.1463748290014,349.80612070276845,232.22500000000002C368.8054041013842,230.30887482900138,406.8039708986157,226.46875,425.8032542972315,224.55C444.80253769584726,222.63125000000002,482.80110449307875,217.834375,501.8003878916945,216.875C520.7996712903102,215.915625,558.7982380875418,218.79112517099864,577.7975214861575,216.875C596.8488577160024,214.95362517099863,634.951530175692,203.44637482900137,654.0028664055369,201.525C673.0021498041526,199.60887482900137,711.0007166013843,205.3625,730,201.525L730,332L45.609375,332Z" fill-opacity="0.7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.7;"></path><path fill="none" stroke="#ffb8b8" d="M45.609375,193.85C64.60865839861576,199.60625,102.60722519584728,209.2,121.60650859446304,216.875C140.6057919930788,224.55,178.6043587903103,252.371875,197.60364218892607,255.25C216.60292558754182,258.128125,254.6014923847733,242.77418775649795,273.60077578338905,239.9C292.65211201323393,237.01793775649796,330.7547844729236,234.1463748290014,349.80612070276845,232.22500000000002C368.8054041013842,230.30887482900138,406.8039708986157,226.46875,425.8032542972315,224.55C444.80253769584726,222.63125000000002,482.80110449307875,217.834375,501.8003878916945,216.875C520.7996712903102,215.915625,558.7982380875418,218.79112517099864,577.7975214861575,216.875C596.8488577160024,214.95362517099863,634.951530175692,203.44637482900137,654.0028664055369,201.525C673.0021498041526,199.60887482900137,711.0007166013843,205.3625,730,201.525" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="45.609375" cy="193.85" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="121.60650859446304" cy="216.875" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="197.60364218892607" cy="255.25" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="273.60077578338905" cy="239.9" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="349.80612070276845" cy="232.22500000000002" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="425.8032542972315" cy="224.55" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="501.8003878916945" cy="216.875" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="577.7975214861575" cy="216.875" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="654.0028664055369" cy="201.525" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="730" cy="201.525" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="730" cy="186.175" r="4" fill="#ffffff" stroke="#808080" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="left: 3.10938px; top: 170px; display: none;"><div class="morris-hover-row-label">2005</div><div class="morris-hover-point" style="color: #b8b8ff">
-  Server 1:
-  50
-</div><div class="morris-hover-point" style="color: #ffb8b8">
-  Server 2:
-  90
-</div></div></div>
   </div>
 </div>
 
-
-
-
-
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="white-box">
-          <h3 class="box-title m-b-0">Responsive Table </h3>
-          <p class="text-muted m-b-20">Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive </code></p>
-          <div class="table-responsive">
-            <table class="table table table-hover">
-              <thead>
-                <tr>
-                  <th>Iteration name</th>
-                  <th>Estimated Start</th>
-                  <th>Estimated Finish</th>
-                  <th>Progress</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for milestone in milestones %}
-                  <tr>
-                    <td><a href="{% url 'panel:show_milestone' id=milestone.id %}" class="project">{{ milestone.name }}</a></td>
-                    <td><span class="text-muted"><i class="fa fa-clock-o"></i>{{ milestone.estimated_start }}</span></td>
-                    <td><span class="text-muted"><i class="fa fa-clock-o"></i>{{ milestone.estimated_finish }}</span> </td>
-                    <td>
-                      <div class="progress progress-xs margin-vertical-10 ">
-                        <div class="progress-bar progress-bar-danger" style="width: {{ progress_points }}%"></div>
-                      </div>
-                    </td>
-                    <td>
-                      {% if not milestone.closed %}
-                        <div class="label label-table label-success">Unclosed</div>
-                      {% else %}
-                        <div class="label label-table label-danger">Closed</div>
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" id="iteration_chart">
-
-
-
-    </div>
-
 <script>
 $( document ).ready(function() {
-  var ctx1 = document.getElementById("chart1p").getContext("2d");
+
+  var ctx1 = document.getElementById("chart1").getContext("2d");
   var data1 = {
-        labels: [
-          {% for sprint in sprints %}
-            "{{ sprint.name }}"{% if not foorloop.last %},{% endif %}
-          {% endfor %}
-        ],
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
           {
-              label: "Optimal",
-              fillColor: "rgba(251,150,120, 0)",
-              strokeColor: "rgba(251,150,120, 0.5)",
-              pointColor: "rgba(251,150,120, 0.5)",
-              pointStrokeColor: "#FB9678",
-              pointHighlightFill: "#FB9678",
-              pointHighlightStroke: "rgba(251,150,120, 0.9)",
-              data: [
-                {% for sprint in sprints %}
-                  {{ sprint.optimal }}{% if not foorloop.last %},{% endif %}
-                {% endfor %}
-              ],
-              lineWidth: 5
-          },
-          {
-              label: "Actual",
-              fillColor: "rgba(0,191,199, 0)",
-              strokeColor: "rgba(0,191,199, 0.8)",
-              pointColor: "rgba(0,191,199, 1)",
-              pointStrokeColor: "#00BFC7",
-              pointHighlightFill: "#00BFC7",
-              pointHighlightStroke: "rgba(0,191,199, 1)",
-              data: [
-                {% for sprint in sprints %}
-                  {{ sprint.evolution }}{% if not foorloop.last %},{% endif %}
-                {% endfor %}
-              ]
-          },
-          {
-              label: "Client Increment",
-              fillColor: "rgba(150,117,206, 0)",
-              strokeColor: "rgba(150,117,206, 0.8)",
-              pointColor: "rgba(150,117,206, 1)",
+              label: "My Second dataset",
+              fillColor: "rgba(251,150,120,0.9)",
+              strokeColor: "rgba(243,245,246,0.9)",
+              pointColor: "rgba(243,245,246,0.9)",
               pointStrokeColor: "#fff",
               pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(150,117,206, 1)",
-              data: [
-                {% for sprint in sprints %}
-                  {{ sprint.client_increment }}{% if not foorloop.last %},{% endif %}
-                {% endfor %}
-              ]
+              pointHighlightStroke: "rgba(243,245,246,0.9)",
+              data: [28, 48, 40, 19, 86, 27, 90]
           },
           {
-              label: "Team Increment",
-              fillColor: "rgba(37,166,247, 0)",
-              strokeColor: "rgba(37,166,247, 0.8)",
-              pointColor: "rgba(37,166,247, 1)",
+              label: "My First dataset",
+              fillColor: "rgba(152,235,239,0.8)",
+              strokeColor: "rgba(152,235,239,0.8)",
+              pointColor: "rgba(152,235,239,1)",
               pointStrokeColor: "#fff",
               pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(37,166,247, 1)",
-              data: [
-                {% for sprint in sprints %}
-                  {{ sprint.team_increment }}{% if not foorloop.last %},{% endif %}
-                {% endfor %}
-              ]
+              pointHighlightStroke: "rgba(152,235,239,1)",
+              data: [0, 59, 80, 58, 20, 55, 40]
           }
+
       ]
   };
+
   var chart1 = new Chart(ctx1).Line(data1, {
-    scaleShowGridLines : true,
-    scaleGridLineColor : "rgba(248,248,248,1)",
-    scaleGridLineWidth : 1,
-    scaleShowHorizontalLines: true,
-    scaleShowVerticalLines: false,
-    bezierCurve : false,
-    bezierCurveTension : 1,
-    pointDot : true,
-    pointDotRadius : 5,
-    pointDotStrokeWidth : 1,
-    pointHitDetectionRadius : 5,
-    datasetStroke : true,
+      scaleShowGridLines : true,
+      scaleGridLineColor : "rgba(0,0,0,.005)",
+      scaleGridLineWidth : 0,
+      scaleShowHorizontalLines: true,
+      scaleShowVerticalLines: true,
+      bezierCurve : true,
+      bezierCurveTension : 0.4,
+      pointDot : true,
+      pointDotRadius : 4,
+      pointDotStrokeWidth : 1,
+      pointHitDetectionRadius : 2,
+      datasetStroke : true,
   tooltipCornerRadius: 2,
-    datasetStrokeWidth : 3,
-    datasetFill : true,
-  responsive: true,
-  scaleOverride:true,
-  scaleSteps:{{ max_point }},
-  scaleStartValue:0,
-  scaleStepWidth:100
-
-  });
-});
-</script>
-
-<script>
-$(document).ready(function() {
-  var side_bar = "{% url 'panel:show_panel' id=project.id %}";
-  $("#side-menu-custom").load(side_bar);
-
-$('a.proyect').click(function(){
-  var page = $(this).attr('href');
-  $("#iteration_chart").load(page);
-  return false;
-});
-
-var opts = {
-        lines: 12, // The number of lines to draw
-        angle: 0, // The length of each line
-        lineWidth: 0.48, // The line thickness
-        pointer: {
-            length: 0.6, // The radius of the inner circle
-            strokeWidth: 0.03, // The rotation offset
-            color: '#464646' // Fill color
-        },
-        limitMax: 'true', // If true, the pointer will not go past the end of the gauge
-        colorStart: '#fa8564', // Colors
-        colorStop: '#fa8564', // just experiment with them
-        strokeColor: '#F1F1F1', // to see which ones work best for you
-        generateGradient: true
-    };
-    var target = document.getElementById('gauge'); // your canvas element
-        var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-        gauge.maxValue = 3000; // set max gauge value
-        gauge.animationSpeed = 32; // set animation speed (32 is default value)
-        gauge.set(1150); // set actual value
-        gauge.setTextField(document.getElementById("gauge-textfield"));
-
-
-        $("input[name='tch3_22']").TouchSpin({
-                    initval: 40
-                });
-
-    var skycons = new Skycons({"color": "#4c5667"});
-    skycons.set("icon1", Skycons.RAIN);
-    skycons.play();
-
-    // Liquid chart configuration
-    var config1 = liquidFillGaugeDefaultSettings();
-    config1.circleColor = "#03a9f3";
-    config1.waveColor = "#03a9f3";
-    config1.textColor = "#54667a";
-    config1.waveAnimateTime = 1000;
-    var gauge1 = loadLiquidFillGauge("fillgauge1", 95, config1);
-});
-</script>
-<script>
-
+      datasetStrokeWidth : 2,
+      datasetFill : true,
+      responsive: true
+  });});
 </script>
