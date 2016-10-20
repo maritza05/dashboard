@@ -6,7 +6,6 @@
             <h5>Estimated Finish</h5>
             <canvas height="100" width="100"></canvas>
           </div>
-
       </div>
       <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
         <div class="white-box">
@@ -33,10 +32,10 @@
                 <h3 class="box-title">SALES ANALYTICS</h3>
                 <ul class="list-inline text-center">
                   <li>
-                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Site A View</h5>
+                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Actual</h5>
                   </li>
                   <li>
-                    <h5><i class="fa fa-circle m-r-5" style="color: #fdc006;"></i>Site B View</h5>
+                    <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Optimal</h5>
                   </li>
                 </ul>
                 <div>
@@ -71,7 +70,6 @@
 
 
 <script>
-
 $( document ).ready(function() {
     var ctx1 = document.getElementById("chart-iteration").getContext("2d");
     var data1 = {
@@ -109,29 +107,40 @@ $( document ).ready(function() {
                   {% endfor %}
                 ]
             }
-
         ]
     };
-
     var chart1 = new Chart(ctx1).Line(data1, {
-        scaleShowGridLines : true,
-        scaleGridLineColor : "rgba(0,0,0,.005)",
-        scaleGridLineWidth : 0,
-        scaleShowHorizontalLines: true,
-        scaleShowVerticalLines: true,
-        bezierCurve : true,
-        bezierCurveTension : 0.4,
-        pointDot : true,
-        pointDotRadius : 4,
-        pointDotStrokeWidth : 1,
-        pointHitDetectionRadius : 2,
-        datasetStroke : true,
-		  tooltipCornerRadius: 2,
-        datasetStrokeWidth : 3,
-        datasetFill : true,
-      responsive: true
+      scaleShowGridLines : true,
+      scaleGridLineColor : "rgba(248,248,248,1)",
+      scaleGridLineWidth : 1,
+      scaleShowHorizontalLines: true,
+      scaleShowVerticalLines: false,
+      bezierCurve : false,
+      bezierCurveTension : 0,
+      pointDot : true,
+      pointDotRadius : 5,
+      pointDotStrokeWidth : 1,
+      pointHitDetectionRadius : 5,
+      datasetStroke : true,
+    tooltipCornerRadius: 2,
+      datasetStrokeWidth : 3,
+      datasetFill : true,
+    responsive: true,
+    options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'probability'
+                    }
+                }]
+            }
+        }
     });
-
     $('.easy-pie-chart-1').easyPieChart({
     			easing: 'easeOutBounce',
     			barColor : '#13dafe',
@@ -144,7 +153,6 @@ $( document ).ready(function() {
     				$(this.el).find('.percent').text(Math.round(percent));
     			}
     		});
-
         $('.easy-pie-chart-2').easyPieChart({
         			easing: 'easeOutBounce',
         			barColor : '#13dafe',
@@ -158,5 +166,4 @@ $( document ).ready(function() {
         			}
         		});
 });
-
     </script>
